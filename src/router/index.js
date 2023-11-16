@@ -1,23 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import MockjsComp from '@/components/MockjsComp.vue'// 导入组件: mockjs练习用组件页面
+import FormComp from '@/components/FormComp.vue' // 导入组件: 新闻列表的增删改查页面
 
 Vue.use(VueRouter)
 
+// 配置路由
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  { path: '/mockjs', name: 'mock-js-comp', component: MockjsComp }, // mockjs练习用组件页面
+  { path: '/', name: 'form-comp', component: FormComp } // 新闻列表的增删改查页面
 ]
 
 const router = new VueRouter({
